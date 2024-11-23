@@ -463,7 +463,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 75vh;
+  /* height: 75vh; */
   background: url("https://firebasestorage.googleapis.com/v0/b/cariscabusinessforum.appspot.com/o/madam1.jpg?alt=media&token=52e33f71-81fc-4959-baf2-977efbf4a968") top left;
   background-size: cover;
   position: relative;
@@ -472,25 +472,33 @@ h6 {
 
 @keyframes backgroundFade {
   0%, 100% {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/cariscabusinessforum.appspot.com/o/madam1.jpg?alt=media&token=52e33f71-81fc-4959-baf2-977efbf4a968");
+    background-image: url("../img/madam1.jpg");
   }
   33% {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/cariscabusinessforum.appspot.com/o/madam2.jpg?alt=media&token=ba6eca31-fa61-4de1-9d61-ef9387ac933d");
+    background-image: url("../img/madam2.jpg");
   }
   66% {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/cariscabusinessforum.appspot.com/o/madam3.jpg?alt=media&token=81d1d0f2-f228-4a89-8165-013f4b9708d7");
+    background-image: url("../img/madam3.jpg");
   }
 
 }
 
-.container-bg{
-  background-color: #11111173;
-  display: inline-block;
-  /* align-self: center; */
-  padding: 3rem 3rem 3rem 3rem;
-  width: 70%;
-  
+
+#hero .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensures it appears above the background */
 }
+
+#hero .container {
+  z-index: 2; /* Ensures the content appears above the overlay */
+  color: #fff; /* Optional: makes text stand out */
+}
+
 
 
 
@@ -532,7 +540,7 @@ h6 {
 }
 
 #hero .countdown {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 #hero .countdown div {
