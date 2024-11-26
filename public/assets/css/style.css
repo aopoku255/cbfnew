@@ -467,7 +467,7 @@ h6 {
   background: url("https://firebasestorage.googleapis.com/v0/b/cariscabusinessforum.appspot.com/o/madam1.jpg?alt=media&token=52e33f71-81fc-4959-baf2-977efbf4a968") top left;
   background-size: cover;
   position: relative;
-  animation: backgroundFade 12s infinite;
+  animation: backgroundFade 30s infinite;
 }
 
 @keyframes backgroundFade {
@@ -479,6 +479,9 @@ h6 {
   }
   66% {
     background-image: url("../img/madam3.jpg");
+  }
+  99% {
+    background-image: url("../img/dancing.jpg");
   }
 
 }
