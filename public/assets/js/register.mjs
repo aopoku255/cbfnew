@@ -68,7 +68,7 @@ async function handleSubmit(e) {
     !continent_value ||
     !country_value ||
     !role_value ||
-     !gender_value
+    !gender_value
   ) {
     errormsg.innerHTML = "Please enter all required fields";
 
@@ -96,8 +96,8 @@ async function handleSubmit(e) {
     );
 
     if (response?.data?.status === "success") {
-    sessionStorage.setItem("response", response?.data?.data);
-    window.location.href = "/thanks.html";
+      sessionStorage.setItem("response", response?.data?.data);
+      window.location.href = "/thanks.html";
     } else {
       errormsg.innerHTML = response?.data?.data;
       setTimeout(() => {
