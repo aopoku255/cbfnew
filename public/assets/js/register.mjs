@@ -79,7 +79,7 @@ async function handleSubmit(e) {
   } else {
     spinnerLd.classList.remove("d-none");
     const response = await axios.post(
-      "https://cariscabusinessforum-27yaq2miua-uc.a.run.app/api/v1/register",
+      "https://cbfbackendnew.vercel.app/api/v1/register",
       {
         prefix: prefix_value,
         first_name: first_name_value,
