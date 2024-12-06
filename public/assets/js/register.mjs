@@ -79,7 +79,7 @@ async function handleSubmit(e) {
   } else {
     spinnerLd.classList.remove("d-none");
     const response = await axios.post(
-      "https://cbfbackendnew.vercel.app/api/v1/register",
+      "https://api.cariscabusinessforum.com/api/v1/register",
       {
         prefix: prefix_value,
         first_name: first_name_value,
@@ -95,10 +95,16 @@ async function handleSubmit(e) {
       }
     );
 
+    console.log(response);
+
     if (response?.data?.status === "success") {
       sessionStorage.setItem("response", response?.data?.data);
       window.location.href = "/thanks.html";
+    }
+    if (response?.data?.status === "error") {
+      errormsg.innerHTML = response?.data?.data;
     } else {
+      console.log(response);
       errormsg.innerHTML = response?.data?.data;
       setTimeout(() => {
         errormsg.innerHTML = "";
