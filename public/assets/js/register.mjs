@@ -58,7 +58,7 @@ async function handleSubmit(e) {
   const role_value = role.value;
   const gender_value = gender.value;
   const sector_value = sector.value;
-  const mailing_list = document.getElementById("mailing_list");
+  const mailing_list_value = mailing_list.checked;
   // //   const comment_value = comment.value;
 
   if (
