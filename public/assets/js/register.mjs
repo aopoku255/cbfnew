@@ -18,6 +18,7 @@ const gender = document.getElementById("gender");
 // const comment = document.getElementById("comment");
 const submitBtn = document.getElementById("submit");
 const spinnerLd = document.getElementById("spinner");
+const mailing_list = document.getElementById("mailing_list");
 
 // ADD EVENT LISTENER
 
@@ -57,6 +58,7 @@ async function handleSubmit(e) {
   const role_value = role.value;
   const gender_value = gender.value;
   const sector_value = sector.value;
+  const mailing_list = document.getElementById("mailing_list");
   // //   const comment_value = comment.value;
 
   if (
@@ -92,6 +94,7 @@ async function handleSubmit(e) {
         role: role_value,
         sector: sector_value,
         gender: gender_value,
+        mailing_list: mailing_list_value,
       }
     );
 
