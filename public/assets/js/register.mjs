@@ -98,11 +98,12 @@ async function handleSubmit(e) {
       }
     );
 
-    console.log(response);
-
     if (response?.data?.status === "success") {
       sessionStorage.setItem("response", response?.data?.data);
-      window.location.href = "/thanks.html";
+      window.location.href = "/thanks";
+      setTimeout(() => {
+        window.location.href = "https://paystack.com/pay/u7wp5a0-8r";
+      }, 9000);
     }
     if (response?.data?.status === "error") {
       errormsg.innerHTML = response?.data?.data;
