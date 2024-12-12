@@ -741,6 +741,17 @@ section {
   }
 }
 
+.youtubevideo{
+  width: 560px;
+}
+
+
+@media (max-width: 567px) {
+  .youtubevideo{
+    width: 100%;
+  }
+}
+
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;

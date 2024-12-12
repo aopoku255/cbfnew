@@ -18,6 +18,7 @@ const gender = document.getElementById("gender");
 // const comment = document.getElementById("comment");
 const submitBtn = document.getElementById("submit");
 const spinnerLd = document.getElementById("spinner");
+const mailing_list = document.getElementById("mailing_list");
 
 // ADD EVENT LISTENER
 
@@ -57,62 +58,65 @@ async function handleSubmit(e) {
   const role_value = role.value;
   const gender_value = gender.value;
   const sector_value = sector.value;
+  const mailing_list_value = mailing_list.checked;
   // //   const comment_value = comment.value;
 
-  if (
-    !first_name_value ||
-    !last_name_value ||
-    !prefix_value ||
-    !email_value ||
-    !organization_value ||
-    !continent_value ||
-    !country_value ||
-    !role_value ||
-    !gender_value
-  ) {
-    errormsg.innerHTML = "Please enter all required fields";
+  console.log(mailing_list_value);
+  // if (
+  //   !first_name_value ||
+  //   !last_name_value ||
+  //   !prefix_value ||
+  //   !email_value ||
+  //   !organization_value ||
+  //   !continent_value ||
+  //   !country_value ||
+  //   !role_value ||
+  //   !gender_value
+  // ) {
+  //   errormsg.innerHTML = "Please enter all required fields";
 
-    setTimeout(() => {
-      errormsg.innerHTML = "";
-    }, 3000);
-    return;
-  } else {
-    spinnerLd.classList.remove("d-none");
-    const response = await axios.post(
-      "https://api.cariscabusinessforum.com/api/v1/register",
-      {
-        prefix: prefix_value,
-        first_name: first_name_value,
-        last_name: last_name_value,
-        email: email_value,
-        organization: organization_value,
-        continent: continent_value,
-        mobile_number: mobile_number_value,
-        country: country_value,
-        role: role_value,
-        sector: sector_value,
-        gender: gender_value,
-      }
-    );
+  //   setTimeout(() => {
+  //     errormsg.innerHTML = "";
+  //   }, 3000);
+  //   return;
+  // } else {
+  //   spinnerLd.classList.remove("d-none");
+  //   const response = await axios.post(
+  //     "https://api.cariscabusinessforum.com/api/v1/register",
+  //     {
+  //       prefix: prefix_value,
+  //       first_name: first_name_value,
+  //       last_name: last_name_value,
+  //       email: email_value,
+  //       organization: organization_value,
+  //       continent: continent_value,
+  //       mobile_number: mobile_number_value,
+  //       country: country_value,
+  //       role: role_value,
+  //       sector: sector_value,
+  //       gender: gender_value,
+  //       mailing_list: mailing_list_value,
+  //     }
+  //   );
 
-    console.log(response);
+  //   console.log(response);
 
-    if (response?.data?.status === "success") {
-      sessionStorage.setItem("response", response?.data?.data);
-      window.location.href = "/thanks.html";
-    }
-    if (response?.data?.status === "error") {
-      errormsg.innerHTML = response?.data?.data;
-    } else {
-      console.log(response);
-      errormsg.innerHTML = response?.data?.data;
-      setTimeout(() => {
-        errormsg.innerHTML = "";
-      }, 3000);
-    }
-    spinnerLd.classList.add("d-none");
-    // window.location.href = "/thanks.html";
-  }
+  //   if (response?.data?.status === "success") {
+  //     sessionStorage.setItem("response", response?.data?.data);
+  //     window.location.href = "/thanks.html";
+  //   }
+  //   if (response?.data?.status === "error") {
+  //     errormsg.innerHTML = response?.data?.data;
+  //   } else {
+  //     console.log(response);
+  //     errormsg.innerHTML = response?.data?.data;
+  //     setTimeout(() => {
+  //       errormsg.innerHTML = "";
+  //     }, 3000);
+  //   }
+  //   spinnerLd.classList.add("d-none");
+
+  // }
 }
 
 submitBtn.addEventListener("click", handleSubmit);
