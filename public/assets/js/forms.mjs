@@ -52,7 +52,7 @@ async function handleSubmit(e) {
   } else {
     spinnerLd.classList.remove("d-none");
     const response = await axios.post(
-      "https://cariscabusinessforum-27yaq2miua-uc.a.run.app/api/v1/sponsors",
+      "https://api.cariscabusinessforum.com/api/v1/sponsors",
       {
         first_name: first_name_value,
         last_name: last_name_value,
