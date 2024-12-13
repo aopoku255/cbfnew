@@ -64,7 +64,6 @@ async function handleSubmit(e) {
   if (
     !first_name_value ||
     !last_name_value ||
-    !prefix_value ||
     !email_value ||
     !organization_value ||
     !continent_value ||
