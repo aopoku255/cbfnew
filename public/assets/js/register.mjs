@@ -61,62 +61,62 @@ async function handleSubmit(e) {
   const mailing_list_value = mailing_list.checked;
   // //   const comment_value = comment.value;
 
-  console.log(mailing_list_value);
-  // if (
-  //   !first_name_value ||
-  //   !last_name_value ||
-  //   !prefix_value ||
-  //   !email_value ||
-  //   !organization_value ||
-  //   !continent_value ||
-  //   !country_value ||
-  //   !role_value ||
-  //   !gender_value
-  // ) {
-  //   errormsg.innerHTML = "Please enter all required fields";
+  if (
+    !first_name_value ||
+    !last_name_value ||
+    !prefix_value ||
+    !email_value ||
+    !organization_value ||
+    !continent_value ||
+    !country_value ||
+    !role_value ||
+    !gender_value
+  ) {
+    errormsg.innerHTML = "Please enter all required fields";
 
-  //   setTimeout(() => {
-  //     errormsg.innerHTML = "";
-  //   }, 3000);
-  //   return;
-  // } else {
-  //   spinnerLd.classList.remove("d-none");
-  //   const response = await axios.post(
-  //     "https://api.cariscabusinessforum.com/api/v1/register",
-  //     {
-  //       prefix: prefix_value,
-  //       first_name: first_name_value,
-  //       last_name: last_name_value,
-  //       email: email_value,
-  //       organization: organization_value,
-  //       continent: continent_value,
-  //       mobile_number: mobile_number_value,
-  //       country: country_value,
-  //       role: role_value,
-  //       sector: sector_value,
-  //       gender: gender_value,
-  //       mailing_list: mailing_list_value,
-  //     }
-  //   );
+    setTimeout(() => {
+      errormsg.innerHTML = "";
+    }, 3000);
+    return;
+  } else {
+    spinnerLd.classList.remove("d-none");
+    const response = await axios.post(
+      "https://api.cariscabusinessforum.com/api/v1/register",
+      {
+        prefix: prefix_value,
+        first_name: first_name_value,
+        last_name: last_name_value,
+        email: email_value,
+        organization: organization_value,
+        continent: continent_value,
+        mobile_number: mobile_number_value,
+        country: country_value,
+        role: role_value,
+        sector: sector_value,
+        gender: gender_value,
+        mailing_list: mailing_list_value,
+      }
+    );
 
-  //   console.log(response);
-
-  //   if (response?.data?.status === "success") {
-  //     sessionStorage.setItem("response", response?.data?.data);
-  //     window.location.href = "/thanks.html";
-  //   }
-  //   if (response?.data?.status === "error") {
-  //     errormsg.innerHTML = response?.data?.data;
-  //   } else {
-  //     console.log(response);
-  //     errormsg.innerHTML = response?.data?.data;
-  //     setTimeout(() => {
-  //       errormsg.innerHTML = "";
-  //     }, 3000);
-  //   }
-  //   spinnerLd.classList.add("d-none");
-
-  // }
+    if (response?.data?.status === "success") {
+      sessionStorage.setItem("response", response?.data?.data);
+      window.location.href = "/thanks";
+      setTimeout(() => {
+        window.location.href = "https://paystack.com/pay/u7wp5a0-8r";
+      }, 9000);
+    }
+    if (response?.data?.status === "error") {
+      errormsg.innerHTML = response?.data?.data;
+    } else {
+      console.log(response);
+      errormsg.innerHTML = response?.data?.data;
+      setTimeout(() => {
+        errormsg.innerHTML = "";
+      }, 3000);
+    }
+    spinnerLd.classList.add("d-none");
+    // window.location.href = "/thanks.html";
+  }
 }
 
 submitBtn.addEventListener("click", handleSubmit);

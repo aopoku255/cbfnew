@@ -48,3 +48,14 @@ app.use("/2024", (req, res) => {
 app.listen(PORT, () => {
   console.log(`APP RUNNING ON ${PORT}`);
 });
+
+[
+  {
+    date: "2/02/2025",
+    time: ["8:30", "9:30", "10:30"],
+  },
+  {
+    date: "2/03/2025",
+    time: ["8:30", "9:30", "10:30"],
+  },
+];
